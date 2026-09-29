@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  --color-bg-page: #0a0a0a;
+  --color-surface: #ffffff;
+  --color-bg-elevated: #eeeeee;
+
+  --color-text-primary: #0a0a0a;
+  --color-text-secondary: #404040;
+  --color-text-muted: #8c8c8c;
+
+  --color-border: #e4e4e4;
+  --color-border-strong: #c8c8c8;
+
+  --color-black: #0a0a0a;
+  --color-white: #ffffff;
+
+  --color-accent: #1d9bf0;
+  --color-line: #ffcc4d;
+  --color-point-accent: #0d5c8f;
+
+  --color-card-grey: #3a3a3a;
+
+  --color-status-ok: #2d9d6f;
+  --color-status-warn: #d9a441;
+  --color-status-bad: #e2564f;
+
+  --font-sans: "Raleway", system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background: var(--color-bg-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-border-strong); border-radius: 3px; }
+
+.text-page-title { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; }
+.text-section-label { font-size: 12.5px; font-weight: 600; letter-spacing: 0.02em; }
+.text-stat-value { font-size: 28px; font-weight: 700; letter-spacing: -0.01em; }
+.text-stat-label { font-size: 13.5px; font-weight: 500; }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.badge-ok { background: rgba(45, 157, 111, 0.18); color: var(--color-status-ok); }
+.badge-warn { background: rgba(217, 164, 65, 0.18); color: var(--color-status-warn); }
+.badge-bad { background: rgba(226, 86, 79, 0.18); color: var(--color-status-bad); }
+.badge-accent { background: rgba(29, 155, 240, 0.18); color: var(--color-accent); }
+.badge-line { background: rgba(255, 204, 77, 0.18); color: var(--color-line); }
+
+@keyframes pulse-ring {
+  0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.6; }
+  100% { transform: translate(-50%, -50%) scale(2.8); opacity: 0; }
+}
+
+@keyframes skeleton-sweep {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Legibility bump — applied only to the dashboard panel and the two
+   floating cards (info, DISCO detail). Sidebar and status bar are
+   siblings outside this class and stay at their existing sizes. */
+.content-scale { font-weight: 500; }
+.content-scale .text-xs { font-size: 0.86rem; }   /* 10.5px -> ~12px, +15% */
+.content-scale .text-sm { font-size: 1rem; }       /* 12.25px -> 14px, +14% */

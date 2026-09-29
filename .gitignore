@@ -1,0 +1,41 @@
+# Secrets / local-only test scripts
+pipelines/api/test_local.py
+pipelines/loader/test_local.py
+terraform.tfvars
+*.tfvars
+!terraform.tfvars.example
+secret_pass.txt
+
+# Terraform state and working files
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+
+# Lambda build artifacts
+lambda/*_build/
+lambda/build/
+lambda/api_build/
+lambda/loader_build/
+lambda/*.zip
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Frontend build output and dependencies
+rete-frontend/node_modules/
+rete-frontend/dist/
+
+# Large raw source data (regeneratable via the loaders, not meant for git)
+data/sources/osm/data/
+
+# Personal working scratch files
+pg_admin_results/
+test results/
+
+# OS/editor cruft
+.DS_Store
+*.swp

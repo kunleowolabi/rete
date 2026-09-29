@@ -1,0 +1,6 @@
+# Copy this file to terraform.tfvars and fill in the values.
+# terraform.tfvars is gitignored — never commit it.
+
+my_ip              = "your_ip_address"       # run: curl -s ifconfig.me
+db_master_password  = "your_password" # min 8 chars, no quotes or special chars
+
